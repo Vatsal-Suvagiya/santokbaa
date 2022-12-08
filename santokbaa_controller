@@ -1,0 +1,72 @@
+/*
+**********************************************************************************
+* SRKAYCG
+* __________________
+*
+* 2017 - SRKAYCG All Rights Reserved.
+*
+* NOTICE: All information contained herein is, and remains the property of
+* SRKAYCG. The intellectual and technical concepts contained herein are
+* proprietary to SRKAYCG. Dissemination of this information or reproduction of
+* this material is strictly forbidden unless prior written permission is
+* obtained from SRKAYCG.
+*
+**********************************************************************************
+*/
+/**
+* @author      :: vatsal suvagiya
+* @module      :: Controller: FormSubmit
+* @description :: This is use to get detail of master
+* ----------------------------------------------------------------------------------
+* Modified By        | Modified Date  |    Note
+* ----------------------------------------------------------------------------------
+*                    | dd/MM/yyyy               |
+*___________________________________________________________________________________
+* <p>
+* This file is called for Controller: LoginController
+* </p>
+*/
+const func = require('../utils/utility-functions');
+const logger = require('../utils/logger-utils');
+const FormService = require('../services/FormService');
+const { RESET_CONTENT } = require('http-status-codes');
+
+module.exports = {
+  nomineeDetails: nomineeDetails,
+}
+
+async function nomineeDetails(req, res) {
+  logger.Start(func.procLogCons.LOG_MAIL_ENTRY_FORM, func.logCons.FIELD_CONTROLLER);
+  await FormService.nomineeDetails(req)
+    .then((response) => {
+      logger.Success(func.procLogCons.LOG_MAIL_ENTRY_FORM, func.logCons.FIELD_CONTROLLER);
+      res.send(response);
+    })
+    .catch(async (reject) => {
+
+      if (req.body.hasOwnProperty("body")) {
+        let body = JSON.parse(req.body.body)
+        let firstname
+
+        if (!body.page1.self.firstname) {
+          firstname = null
+        }
+        else {
+          firstname = body.page1.self.firstname
+        }
+        await FormService.createMailHistory(firstname, func.logCons.LOG_MAIL_SEND_STATUS_FAIL)
+          .then(() => {
+            logger.Error(func.procLogCons.LOG_MAIL_ENTRY_FORM, func.logCons.FIELD_CONTROLLER);
+
+            res.send(reject);
+          })
+          .catch((err) => {
+            logger.Error(func.procLogCons.LOG_MAIL_ENTRY_FORM, err, func.logCons.FIELD_CONTROLLER);
+            res.send(err);
+          })
+
+      } else {
+        res.send(func.responseGenerator(func.logCons.MSG_ERROR, func.logCons.LOG_BODY_IS_NOT_DEFINED, true))
+      }
+    });
+}
