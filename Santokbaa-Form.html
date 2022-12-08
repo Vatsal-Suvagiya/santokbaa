@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        body{font-family: Arial, Helvetica, sans-serif; font-size: 11px;}
+        .container{max-width: 1400px; width: 98%; margin: 0 auto; border: 0px solid #ccc;  display: table;padding-bottom: 10px;}
+        .container-box{
+            border: 0px solid #ccc; 
+            display: table;
+            /* margin: 2%;  */
+            box-shadow: 0px 0px 10px #e2e2e2;
+            border-radius: 10px;
+            width: 784px;
+            /* width: 96%;
+            padding-bottom: 2%; */
+            margin-top: 15px;  
+            margin-right: 10px;
+            padding-bottom: 25px;
+        }
+        .passport-img{
+            /* max-width: 150px; */
+            /* max-height: 250px; */
+            height: 150px;
+            width: 150px;
+            /* float: right; */
+            text-align: center;
+            margin: 0 auto;
+            border-radius: 100px;
+        }
+        .row{padding: 0px 2%; width:96%; float: left; display: block;}  
+        .w-25{width: 25%;}
+        .w-75{width: 75%;}
+        .w-50{width: 50%;}
+        .w-100{width: 100%;}
+        .fl{float: left;}
+        .fr{float: right;}
+        .form-label{width: 120px; float: left;padding-top: 12px;font-weight: bold;  line-height: 22px;}
+        .form-sap{width: 10px; float: left;padding-top: 12px;font-weight: bold;  text-align: center; line-height: 22px;}
+        .form-info{width: calc(100% - 160px);  float: left;padding-top: 12px; text-align: justify; line-height: 22px; letter-spacing: 0.5px; }
+        .page-title{color: #3a98db; font-size: 200%; letter-spacing: 1px;  text-transform: capitalize;}
+        .logo-center{
+            margin: 0 auto;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row ">
+            <div class="logo-center">
+                <img src="http://uat.srkaycg.com/UAT-UIProject-1/Santokbaa/http/img/logo.png">
+            </div>
+        </div>
+        <div class="container-box">
+            
+            
+        <div class="row ">
+            <h3 class="page-title">
+                Nominee Details
+            </h3>
+        </div>
+        <div class="row"> 
+            <div class="w-50 fl">
+        
+                <div class="w-100 fl">
+                    <div class="form-label">Nominating</div>
+                    <div class="form-sap">:</div>
+                    <div class="form-info"><%= page1.nominee.nominating %></div>
+                </div>
+                <div class="w-100 fl">
+                    <div class="form-label">Title</div>
+                    <div class="form-sap">:</div>
+                    <div class="form-info"><%= page1.self.title%></div>
+                </div>
+                
+                
+                <div class="w-100 fl"> 
+                    <div class="form-label">First Name</div>
+                    <div class="form-sap">:</div>
+                    <div class="form-info"><%= page1.self.firstname%></div>
+                </div>
+                
+                <div class="w-100 fl"> 
+                    <div class="form-label">Family Name</div>
+                    <div class="form-sap">:</div>
+                    <div class="form-info"><%= page1.self.lastname%></div>
+                </div>
+                <div class="w-100 fl">
+                    <div class="form-label">Gender</div>
+                    <div class="form-sap">:</div>
+                    <div class="form-info"><%= page1.self.gender%></div>
+                </div>
+        </div> 
+        <div class="w-50 fl" style="text-align: center; margin: 0 auto;">
+            <!-- <img src="file:///C:/Users/vatsal.suvagiya/Desktop/practice/santokbaa/santokbaa/assets/undefined_25-11-2022%203-20-05%20pm/3-02-removebg-preview.png" class="passport-img"> -->
+            <img src="http://127.0.0.1/assets/<%=folder%>/Profile_<%=profile_picture%>" class="passport-img">
+            <!-- <img src=" ../assets/images/Hotel.jpg" class="passport-img"> -->
+            </div>
+        </div>
+        <div class="row"> 
+            
+            
+            <div class="w-50 fl"> 
+                <div class="form-label">Date of Birth</div>
+                <div class="form-sap">:</div>
+                <div class="form-info"><%= page1.self.DOB%></div>
+            </div>
+            <div class="w-50 fl">
+                <div class="form-label">Nationality</div>
+                <div class="form-sap">:</div>
+                <div class="form-info"><%= page1.self.nationality%></div>
+            </div>
+            
+            <div class="w-50 fl"> 
+                <div class="form-label">Country Code</div>
+                <div class="form-sap">:</div>
+                <div class="form-info"><%= page1.self.countryCode%></div>
+            </div>
+            <div class="w-50 fl">
+                <div class="form-label">Phone</div>
+                <div class="form-sap">:</div>
+                <div class="form-info"><%= page1.self.mobile%></div>
+            </div>
+            
+            <div class="w-50 fl"> 
+                <div class="form-label">Country Code</div>
+                <div class="form-sap">:</div>
+                <div class="form-info"><%= page1.self.pcountryCode%></div>
+            </div>
+            <div class="w-50 fl">
+                <div class="form-label">Phone</div>
+                <div class="form-sap">:</div>
+                <div class="form-info"><%= page1.self.phone%></div>
+            </div>
+            
+            <div class="w-50 fl"> 
+                <div class="form-label">Address</div>
+                <div class="form-sap">:</div>
+                <div class="form-info"><%= page1.self.address%></div>
+            </div>
+            <div class="w-50 fl">
+                <div class="form-label">Country</div>
+                <div class="form-sap">:</div>
+                <div class="form-info"><%= page1.self.country%></div>
+            </div>
+            
+            <div class="w-50 fl"> 
+                <div class="form-label">State/Province/County</div>
+                <div class="form-sap">:</div>
+                <div class="form-info"><%= page1.self.stPrC%>stPrC</div>
+            </div>
+            <div class="w-50 fl">
+                <div class="form-label">City</div>
+                <div class="form-sap">:</div>
+                <div class="form-info"><%= page1.self.city%></div>
+            </div>
+            
+            <div class="w-50 fl"> 
+                <div class="form-label">Zipcode</div>
+                <div class="form-sap">:</div>
+                <div class="form-info"><%= page1.self.zipCode%></div>
+            </div>
+            <div class="w-50 fl"> 
+                <div class="form-label">Email</div>
+                <div class="form-sap">:</div>
+                <div class="form-info"><a href="<%= page1.self.email%>" target="_blank"><%= page1.self.email%></a></div>
+            </div>
+            <div class="w-50 fl"> 
+                <div class="form-label">URL</div>
+                <div class="form-sap">:</div>
+                <div class="form-info"><a href="<%= page1.self.url%>" target="_blank"><%= page1.self.url%></a></div>
+            </div>
+           
+             
+
+        </div>
+    </div>
+
+    <% if(page1.hasOwnProperty("other")){%>
+
+    <div class="container-box">
+        <div class="row ">
+            <h3 class="page-title">
+                Personal details of the nominator
+            </h3>
+        </div>
+        <div class="row"> 
+            <div class="w-50 fl">
+                <div class="form-label">Title</div>
+                <div class="form-sap">:</div>
+                <div class="form-info"><%= page1.other.othertitle%></div>
+            </div> 
+            
+            <div class="w-50 fl"> 
+                <div class="form-label">First Name</div>
+                <div class="form-sap">:</div>
+                <div class="form-info"><%= page1.other.otherfirstname%></div>
+            </div>
+            
+            <div class="w-50 fl"> 
+                <div class="form-label">Family Name</div>
+                <div class="form-sap">:</div>
+                <div class="form-info"><%= page1.other.otherlastname%></div>
+            </div>
+            <div class="w-50 fl">
+                <div class="form-label">Relationship with nominee</div>
+                <div class="form-sap">:</div>
+                <div class="form-info"><%= page1.other.otherrelate%></div>
+            </div>
+            
+            <div class="w-50 fl">
+                <div class="form-label">Gender</div>
+                <div class="form-sap">:</div>
+                <div class="form-info"><%= page1.other.othergender%></div>
+            </div>
+            
+            <div class="w-50 fl"> 
+                <div class="form-label">Date of Birth</div>
+                <div class="form-sap">:</div>
+                <div class="form-info"><%= page1.other.otherDOB%></div>
+            </div>
+            <div class="w-50 fl">
+                <div class="form-label">Nationality</div>
+                <div class="form-sap">:</div>
+                <div class="form-info"><%= page1.other.othernationality%></div>
+            </div>
+            
+            <div class="w-50 fl"> 
+                <div class="form-label">Country Code</div>
+                <div class="form-sap">:</div>
+                <div class="form-info"><%= page1.other.othercountryCode%></div>
+            </div>
+            <div class="w-50 fl">
+                <div class="form-label">Phone</div>
+                <div class="form-sap">:</div>
+                <div class="form-info"><%= page1.other.othermobile%></div>
+            </div>
+            
+            <div class="w-50 fl"> 
+                <div class="form-label">Country Code</div>
+                <div class="form-sap">:</div>
+                <div class="form-info"><%= page1.other.otherpcountryCode%></div>
+            </div>
+            <div class="w-50 fl">
+                <div class="form-label">Phone</div>
+                <div class="form-sap">:</div>
+                <div class="form-info"><%= page1.other.otherphone%></div>
+            </div>
+            
+            <div class="w-50 fl"> 
+                <div class="form-label">Address</div>
+                <div class="form-sap">:</div>
+                <div class="form-info"><%= page1.other.othertitle%></div>
+            </div>
+            <div class="w-50 fl">
+                <div class="form-label">Country</div>
+                <div class="form-sap">:</div>
+                <div class="form-info"><%= page1.other.othertitle%></div>
+            </div>
+            
+            <div class="w-50 fl"> 
+                <div class="form-label">State/Province/County</div>
+                <div class="form-sap">:</div>
+                <div class="form-info"><%= page1.other.othertitle%></div>
+            </div>
+            <div class="w-50 fl">
+                <div class="form-label">City</div>
+                <div class="form-sap">:</div>
+                <div class="form-info"><%= page1.other.othertitle%></div>
+            </div>
+            
+            <div class="w-50 fl"> 
+                <div class="form-label">Zipcode</div>
+                <div class="form-sap">:</div>
+                <div class="form-info"><%= page1.other.othertitle%></div>
+            </div>
+            <div class="w-50 fl"> 
+                <div class="form-label">Email</div>
+                <div class="form-sap">:</div>
+                <div class="form-info"><a href="<%= page1.other.othertitle%>" target="_blank"><%= page1.other.othertitle%></a></div>
+            </div>
+            <div class="w-50 fl"> 
+                <div class="form-label">URL</div>
+                <div class="form-sap">:</div>
+                <div class="form-info"><a href="<%= page1.other.othertitle%>" target="blank"><%= page1.other.othertitle%></a></div>
+            </div>  
+        </div>
+</div>
+<%}%>
+
+<div class="container-box">
+        
+        <div class="row ">
+            <h3 class="page-title">
+                Nomination Details
+            </h3>
+        </div>
+        <div class="row"> 
+            <div class="w-100 fl">
+                <div class="form-label">Area of Work</div>
+                <div class="form-sap">:</div>
+                <div class="form-info"><%= page2.workArea%></div>
+            </div>
+            <div class="w-100 fl">
+                <div class="form-label">Achievements and
+                    Contributions</div>
+                <div class="form-sap">:</div>
+                <div class="form-info"><%= page2.contributiontext%></div>
+            </div>
+            <div class="w-100 fl">
+                <div class="form-label">Societal Development</div>
+                <div class="form-sap">:</div>
+                <div class="form-info"><%= page2.developmentText%></div>
+            </div>
+            <div class="w-100 fl">
+                <div class="form-label">Geographical coverage</div>
+                <div class="form-sap">:</div>
+                <div class="form-info"><%= page2.coverageArea%></div>
+            </div>
+            <div class="w-100 fl">
+                <div class="form-label">Reference Letters</div>
+                <div class="form-sap">:</div>
+
+                <% (page3.ReferenceLetters).forEach((letter, index)=>{
+                    <!-- var name = (letter.name).split(".")[0] -->
+                    
+                    %>
+                    <%if(index!=0){%>
+                    <div class="form-label"></div>
+                    <div class="form-sap"> </div>
+                    <%}%>
+                    <div class="form-info"> <a href="http://127.0.0.1/assets/<%=folder%>/<%= letter.LetterName%> " target="blank"><%= letter.LetterName%></a> - <%= letter.caption%> - <%= letter.NameOfReference%> - <%= letter.email%> - <%= letter.countryCode%> - <%= letter.mobile%>                     
+                </div>
+                <%})%>
+
+            </div>
+            <div class="w-100 fl">
+                <div class="form-label">Pictures</div>
+                <div class="form-sap">:</div>
+                <% (page3.AchPictures).forEach((picture,index)=>{
+                    <!-- var name = (letter.name).split(".")[0] -->
+                    %>
+                    <%if(index!=0){%>
+                        <div class="form-label"></div>
+                        <div class="form-sap"> </div>
+                        <%}%>
+                <div class="form-info"><a href="http://127.0.0.1/assets/<%=folder%>/<%=picture.PictureName%>" target="_blank"><%=picture.PictureName%></a> 
+                </div>
+                <%})%>
+            </div> 
+            <div class="w-100 fl">
+                <div class="form-label">Video links
+                </div>
+                <div class="form-sap">:</div>
+
+                <% (page3.VideoLinks).forEach((video,index)=>{
+                    <!-- var name = (letter.name).split(".")[0] -->
+                    
+                    %>
+                    <%if(index!=0){%>
+                    <div class="form-label"></div>
+                    <div class="form-sap"> </div>
+                    <%}%>
+                    <div class="form-info"> <a href="<%=video.link%>" target="blank"><%=video.link%></a> - <%= video.caption%>                      
+                </div>
+                <%})%>
+
+            </div>
+            <div class="w-100 fl">
+                <div class="form-label">Other links</div>
+                <div class="form-sap">:</div>
+
+                <% (page3.OtherLinks).forEach((Other,index)=>{
+                    <!-- var name = (letter.name).split(".")[0] -->
+                    
+                    %>
+                    <%if(index!=0){%>
+                    <div class="form-label"></div>
+                    <div class="form-sap"> </div>
+                    <%}%>
+                    <div class="form-info"> <a href="<%=Other.link%>" target="blank"><%=Other.link%></a> - <%= Other.caption%>                     
+                    </div>
+                <%})%>
+
+            </div>
+            <% if(page3.hasOwnProperty("ReasonForNomination")){%>
+
+            <div class="w-100 fl">
+                <div class="form-label">Why have you
+                    nominated this person</div>
+                <div class="form-sap">:</div>
+                <div class="form-info"><%=page3.ReasonForNomination%></div>
+            </div> 
+            <%}%>
+
+            <div class="w-100 fl">
+                <div class="form-label">Other information</div>
+                <div class="form-sap">:</div>
+                <div class="form-info"><%=page3.OtherInfo%></div>
+            </div> 
+            
+        </div>
+        </div>
+        <div class="container-box">
+        
+            <!-- <div class="row ">
+                <h3 class="page-title">
+                    Source of information
+                </h3>
+            </div> -->
+            <div class="row"> 
+                <div class="w-100 fl">
+                    <div class="form-label">Source of information</div>
+                    <div class="form-sap">:</div>
+                    <div class="form-info"><%=page3.SourceOfInfo%></div>
+                </div>
+            </div>
+            <div class="row"> 
+                <div class="w-100 fl">
+                    <div class="form-label">Submission Date & Time</div>
+                    <div class="form-sap">:</div>
+                    <div class="form-info"><%=page3.dateTime%></div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
